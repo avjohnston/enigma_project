@@ -24,27 +24,27 @@ class OffsetTest < Minitest::Test
     assert_equal '6400', offset.get_offset
   end
 
-  def test_a_offset
+  def test_a_rotation
     offset = Offset.new('021420')
 
-    assert_equal 6, offset.a_offset
+    assert_equal 6, offset.a_rotation
   end
 
-  def test_b_offset
+  def test_b_rotation
     offset = Offset.new('021420')
 
-    assert_equal 4, offset.b_offset
+    assert_equal 4, offset.b_rotation
   end
 
-  def test_c_offset
+  def test_c_rotation
     offset = Offset.new('021420')
 
-    assert_equal 0, offset.c_offset
+    assert_equal 0, offset.c_rotation
   end
 
-  def test_d_offset
+  def test_d_rotation
     offset = Offset.new('021420')
 
-    assert_equal 0, offset.d_offset
+    assert_equal 0, offset.d_rotation
   end
 end

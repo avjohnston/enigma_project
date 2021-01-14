@@ -15,19 +15,19 @@ class Offset
     square_date[-4..-1]
   end
 
-  def a_offset
+  def a_rotation
     get_offset[0].to_i
   end
 
-  def b_offset
+  def b_rotation
     get_offset[1].to_i
   end
 
-  def c_offset
+  def c_rotation
     get_offset[2].to_i
   end
 
-  def d_offset
+  def d_rotation
     get_offset[3].to_i
   end
 
