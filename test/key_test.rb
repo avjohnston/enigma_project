@@ -6,7 +6,7 @@ class KeyTest < Minitest::Test
   def test_it_exists_and_has_attributes
     key = Key.new
     key2 = Key.new('01234')
-
+    require "pry"; binding.pry
     assert_instance_of Key, key
     assert_equal 5, key.key.length
     assert_equal '01234', key2.key

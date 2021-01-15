@@ -1,21 +1,31 @@
 class Enigma
-  def initialize(message, key, offset)
-    @message = message
-    @key = key
-    @offset = offset
+  def initialize
+    @rotation = Rotation.new
     @encrypt = {}
     @decrypt = {}
+    @key = Key.new
+    @date = Offset.new
   end
 
-  def encrypt(message, key, offset)
-    encrypt[message] = helper_method(message, :encrypt)
-    encrypt[key] = key
-    encrypt[offset] = offset
+  def encrypt(message, key, date)
+    encrypt = {
+                encryption: @rotation.apply_shift(message, :encryption),
+                key: key,
+                date: date
+              }
+
+    encrypt
   end
 
-  def decrypt(message, key, offset)
-    decrypt[message] = helper_method_2(message, :decrypt)
-    decrypt[key] = key
-    decrypt[offset] = offset
-  end
+  # def decrypt(message, key, date)
+  #   key = Key.new(key)
+  #   offset = Offset.new(offset)
+  #   encrypt = {
+  #               decryption: @rotation.apply_shift(message, :decryption),
+  #               key: key,
+  #               date: offset
+  #             }
+  #
+  #   encrypt
+  # end
 end
