@@ -5,14 +5,14 @@ require './lib/rotation'
 class RotationTest < Minitest::Test
   def test_it_exists_and_has_attributes
     shift = Rotation.new
-
+    # require "pry"; binding.pry
     assert_instance_of Rotation, shift
   end
 
   def test_it_can_letter_1_shift
     shift = Rotation.new
     forward_shift = shift.letter_1_shift('a', :encryption)
-
+    require "pry"; binding.pry
     assert_equal 'a', shift.letter_1_shift(shift.letter_1_shift('a', :encryption), :decryption)
   end
 
