@@ -4,7 +4,7 @@ require './lib/offset'
 
 class OffsetTest < Minitest::Test
   def test_it_exists_and_has_attributes
-    time = Time.now.strftime('%Y-%m-%d').to_s[2..9].split('-').reverse.join('')
+    time = Time.now.strftime('%d%m%y')
     date = Offset.new
     date2 = Offset.new('021420')
     assert_instance_of Offset, date
