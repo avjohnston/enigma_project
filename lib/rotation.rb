@@ -2,11 +2,8 @@ require_relative 'offset'
 require_relative 'key'
 
 class Rotation
-  attr_reader :type,
-              :chars
 
-  def initialize(type)
-    @type = type
+  def initialize
     @chars = ('a'..'z').to_a + [' ']
     @key = Key.new
     @offset = Offset.new
@@ -53,16 +50,16 @@ class Rotation
   end
 
   def apply_shift(text, type)
-    rotation = Rotation.new(type)
+    rotation = Rotation.new
     letters = text.split("")
-    position = 0
+    letter_number = 0
     new_text = ""
     letters.each do |letter|
-      position += 1; position = 1 if position > 4
-      new_text += letter_1_shift(letter, type) if position == 1
-      new_text += letter_2_shift(letter, type) if position == 2
-      new_text += letter_3_shift(letter, type) if position == 3
-      new_text += letter_4_shift(letter, type) if position == 4
+      letter_number += 1; letter_number = 1 if letter_number > 4
+      new_text += letter_1_shift(letter, type) if letter_number == 1
+      new_text += letter_2_shift(letter, type) if letter_number == 2
+      new_text += letter_3_shift(letter, type) if letter_number == 3
+      new_text += letter_4_shift(letter, type) if letter_number == 4
     end
     new_text
   end
