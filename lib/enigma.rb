@@ -8,13 +8,13 @@ class Enigma
   end
 
   def encrypt(message, key, offset)
-    encrypt[message] = helper_method(message)
+    encrypt[message] = helper_method(message, :encrypt)
     encrypt[key] = key
     encrypt[offset] = offset
   end
 
   def decrypt(message, key, offset)
-    decrypt[message] = helper_method_2(message)
+    decrypt[message] = helper_method_2(message, :decrypt)
     decrypt[key] = key
     decrypt[offset] = offset
   end

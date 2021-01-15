@@ -8,7 +8,7 @@ class KeyTest < Minitest::Test
     key2 = Key.new('01234')
 
     assert_instance_of Key, key
-    assert_equal '50118', key.key
+    assert_equal 5, key.key.length
     assert_equal '01234', key2.key
   end
 
