@@ -17,14 +17,8 @@ class OffsetTest < Minitest::Test
 
   def test_it_can_square_date
     offset = Offset.new('021420')
-
-    assert_equal '458816400', offset.square_date
-  end
-
-  def test_it_can_get_offset
-    offset = Offset.new('021420')
-
-    assert_equal '6400', offset.get_offset
+    
+    assert_equal '6400', offset.square_date
   end
 
   def test_a_rotation

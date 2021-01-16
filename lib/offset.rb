@@ -8,27 +8,39 @@ class Offset
   end
 
   def square_date
-    (@date.to_i ** 2).to_s
+    (@date.to_i ** 2).to_s[-4..-1]
   end
 
-  def get_offset
-    square_date[-4..-1]
-  end
+  # def offset
+  #   hash = Hash.new
+  #   count = 0
+  #   square_date.map do |num|
+  #     count += 1
+  #     hash[count] = num
+  #   end
+  #   hash
+  # end
+  #
+  # def offset_rotation(number)
+  #   offset.find do |index, num|
+  #     index == number
+  #   end.last
+  # end
 
   def a_rotation
-    get_offset[0].to_i
+    square_date[0].to_i
   end
 
   def b_rotation
-    get_offset[1].to_i
+    square_date[1].to_i
   end
 
   def c_rotation
-    get_offset[2].to_i
+    square_date[2].to_i
   end
 
   def d_rotation
-    get_offset[3].to_i
+    square_date[3].to_i
   end
 
 end
