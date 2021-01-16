@@ -26,21 +26,4 @@ class Offset
       index == number
     end.last.to_i
   end
-
-  # def a_rotation
-  #   square_date[0].to_i
-  # end
-  #
-  # def b_rotation
-  #   square_date[1].to_i
-  # end
-  #
-  # def c_rotation
-  #   square_date[2].to_i
-  # end
-  #
-  # def d_rotation
-  #   square_date[3].to_i
-  # end
-
 end
