@@ -12,38 +12,44 @@ class RotationTest < Minitest::Test
     assert_instance_of Rotation, shift
   end
 
-  def test_it_can_letter_1_shift
+  def test_it_can_letter_shift
     shift = Rotation.new
 
-    assert_equal 'f', shift.letter_1_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal 'a', shift.letter_1_shift('f', :decryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal '-', shift.letter_1_shift('-', :encryption)
+    assert_equal 'f', shift.letter_shift('a', 1, :encryption, Key.new('50118'), Offset.new('122095'))
   end
 
-  def test_it_can_letter_2_shift
-    shift = Rotation.new
-
-    assert_equal 'b', shift.letter_2_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal 'a', shift.letter_2_shift('b', :decryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal '!', shift.letter_2_shift('!', :encryption)
-  end
-
-  def test_it_can_letter_3_shift
-    shift = Rotation.new
-
-    assert_equal 'n', shift.letter_3_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal 'a', shift.letter_3_shift('n', :decryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal '0', shift.letter_3_shift('0', :encryption)
-  end
-
-  def test_it_can_letter_4_shift
-    shift = Rotation.new
-
-    assert_equal 'x', shift.letter_4_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal 'a', shift.letter_4_shift('x', :decryption, Key.new('50118'), Offset.new('122095'))
-    assert_equal '/', shift.letter_4_shift('/', :encryption)
-  end
-
+  # def test_it_can_letter_1_shift
+  #   shift = Rotation.new
+  #
+  #   assert_equal 'f', shift.letter_1_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal 'a', shift.letter_1_shift('f', :decryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal '-', shift.letter_1_shift('-', :encryption)
+  # end
+  #
+  # def test_it_can_letter_2_shift
+  #   shift = Rotation.new
+  #
+  #   assert_equal 'b', shift.letter_2_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal 'a', shift.letter_2_shift('b', :decryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal '!', shift.letter_2_shift('!', :encryption)
+  # end
+  #
+  # def test_it_can_letter_3_shift
+  #   shift = Rotation.new
+  #
+  #   assert_equal 'n', shift.letter_3_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal 'a', shift.letter_3_shift('n', :decryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal '0', shift.letter_3_shift('0', :encryption)
+  # end
+  #
+  # def test_it_can_letter_4_shift
+  #   shift = Rotation.new
+  #
+  #   assert_equal 'x', shift.letter_4_shift('a', :encryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal 'a', shift.letter_4_shift('x', :decryption, Key.new('50118'), Offset.new('122095'))
+  #   assert_equal '/', shift.letter_4_shift('/', :encryption)
+  # end
+  #
   def test_it_can_apply_shift
     shift = Rotation.new
     encryption = shift.apply_shift('hello world', :encryption)
