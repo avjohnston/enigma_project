@@ -1,10 +1,8 @@
-
-
 require_relative 'offset'
 require_relative 'key'
 
 class Rotation
-  attr_reader :key, :date, :chars
+
   def initialize
     @chars = ('a'..'z').to_a + [' ']
     @key = Key.new

@@ -1,4 +1,4 @@
-require 'date'
+require 'time'
 
 class Offset
   attr_reader :date
