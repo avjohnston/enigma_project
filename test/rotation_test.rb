@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/rotation'
@@ -14,6 +17,8 @@ class RotationTest < Minitest::Test
     forward_shift = shift.letter_1_shift('a', :encryption)
 
     assert_equal 'a', shift.letter_1_shift(shift.letter_1_shift('a', :encryption), :decryption)
+
+    assert_equal '-', shift.letter_2_shift('-', :encryption)
   end
 
   def test_it_can_letter_2_shift
@@ -21,6 +26,8 @@ class RotationTest < Minitest::Test
     forward_shift = shift.letter_2_shift('a', :encryption)
 
     assert_equal 'a', shift.letter_2_shift(shift.letter_2_shift('a', :encryption), :decryption)
+
+    assert_equal '!', shift.letter_2_shift('!', :encryption)
   end
 
   def test_it_can_letter_3_shift
@@ -28,6 +35,8 @@ class RotationTest < Minitest::Test
     forward_shift = shift.letter_3_shift('a', :encryption)
 
     assert_equal 'a', shift.letter_3_shift(shift.letter_3_shift('a', :encryption), :decryption)
+
+    assert_equal '0', shift.letter_2_shift('0', :encryption)
   end
 
   def test_it_can_letter_4_shift
@@ -35,6 +44,8 @@ class RotationTest < Minitest::Test
     forward_shift = shift.letter_4_shift('a', :encryption)
 
     assert_equal 'a', shift.letter_4_shift(shift.letter_4_shift('a', :encryption), :decryption)
+
+    assert_equal '/', shift.letter_2_shift('/', :encryption)
   end
 
   def test_it_can_apply_shift
