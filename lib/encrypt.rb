@@ -12,4 +12,4 @@ encryption = enigma.encrypt(original_message)
 
 encrypted = File.open("text/#{files[1]}", "w").write(encryption[:encryption])
 
-puts "Created #{files[1]} with the key #{encryption[:key]} and date #{encryption[:data]}"
+puts "Created #{files[1]} with the key #{encryption[:key]} and date #{encryption[:date]}"
