@@ -1,16 +1,20 @@
 class Key
   attr_reader :key
 
-  def initialize(key = rand(1...99_999).to_s.rjust(5, "0"))
+  def initialize(key = rand.to_s[2..6])
     @key = key
   end
 
-  def key_array
+  def key_split
     array = []
     @key.split('').each_cons(2) do |num|
       array << num
     end
-    array.map do |array|
+    array
+  end
+
+  def key_array
+    key_split.map do |array|
       array.join('')
     end
   end
