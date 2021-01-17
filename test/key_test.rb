@@ -18,7 +18,7 @@ class KeyTest < Minitest::Test
   def test_it_can_give_key_split
     key = Key.new('01234')
 
-    assert_equal [["6", "1"], ["1", "9"], ["9", "8"], ["8", "9"]], key.key_split
+    assert_equal [["0", "1"], ["1", "2"], ["2", "3"], ["3", "4"]], key.key_split
   end
 
   def test_it_can_give_key_array
