@@ -48,6 +48,9 @@ class RotationTest < Minitest::Test
     assert_equal 'l', shift.letter_shift('e', 4, :decryption, Key.new('02715'), Offset.new('040895'))
 
     assert_equal '!', shift.letter_shift('!', 4, :decryption, Key.new('02715'), Offset.new('040895'))
+    assert_equal '0', shift.letter_shift('0', 3, :decryption, Key.new('02715'), Offset.new('040895'))
+    assert_equal '/', shift.letter_shift('/', 2, :decryption, Key.new('02715'), Offset.new('040895'))
+    assert_equal '?', shift.letter_shift('?', 1, :decryption, Key.new('02715'), Offset.new('040895'))
 
     assert shift.chars.include?(shift.letter_shift('a', 4, :encryption))
     assert shift.chars.include?(shift.letter_shift('a', 4, :encryption, Key.new('02715')))
