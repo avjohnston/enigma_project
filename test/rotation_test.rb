@@ -60,7 +60,7 @@ class RotationTest < Minitest::Test
 
   def test_it_can_apply_shift
     shift = Rotation.new
-    encryption = shift.apply_shift('hello world', :encryption)
+    encryption = shift.apply_shift('HeLlo World', :encryption)
 
     assert_equal 'keder ohulw', shift.apply_shift('hello world', :encryption, Key.new('02715'), Offset.new('040895'))
     assert_equal 'hello world', shift.apply_shift('keder ohulw', :decryption, Key.new('02715'), Offset.new('040895'))

@@ -58,5 +58,14 @@ class EnigmaTest < Minitest::Test
     encryption = enigma.encrypt('hello world', '02715', '040895')
 
     assert_equal expected, enigma.decrypt(encryption[:encryption], '02715', '040895')
+
+    encryption2 = enigma.encrypt('hello world')
+    expected2 = {
+                  decryption: 'hello world',
+                  key: encryption2[:key],
+                  date: encryption2[:date]
+                }
+
+    assert_equal expected2, enigma.decrypt(encryption2[:encryption], encryption2[:key], encryption2[:date])
   end
 end
