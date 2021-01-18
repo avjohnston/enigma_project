@@ -12,7 +12,7 @@ class Rotation
   def shift_value(rotation, type, key = @key, date = @date)
     if type == :encryption
       (date.rotation(rotation) + key.rotation(rotation))
-    else
+    elsif type == :decryption
     ((date.rotation(rotation) + key.rotation(rotation)) * -1)
     end
   end
