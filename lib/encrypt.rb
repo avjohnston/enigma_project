@@ -18,6 +18,6 @@ end
 
 encryption = optional_arg_input
 
-File.open("text/#{@files[1]}", "w").write(encryption[:encryption])
+File.open("text/#{@files[1]}", "w").write(encryption[:encryption].split("\n").first)
 
 puts "Created #{@files[1]} with the key #{encryption[:key]} and date #{encryption[:date]}"
