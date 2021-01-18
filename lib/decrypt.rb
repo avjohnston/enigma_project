@@ -6,6 +6,7 @@ require './lib/enigma'
 enigma = Enigma.new
 files = ARGV
 
+
 original_message = File.open("text/#{files[0]}", "r").read.chomp
 
 decryption = enigma.decrypt(original_message, files[2], files[3])

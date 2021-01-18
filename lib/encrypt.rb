@@ -3,13 +3,21 @@ require './lib/offset'
 require './lib/rotation'
 require './lib/enigma'
 
-enigma = Enigma.new
-files = ARGV
+@enigma = Enigma.new
+@files = ARGV
 
-original_message = File.open("text/#{files[0]}", "r").read.chomp
+def optional_arg_input
+  original_message = File.open("text/#{@files[0]}", "r").read.chomp
+  arg = File.read("text/#{@files[0]}").split("\n")
+  if arg[1].nil? || arg[2].nil?
+    @enigma.encrypt(original_message)
+  else
+    @enigma.encrypt(original_message, arg[1], arg[2])
+  end
+end
 
-encryption = enigma.encrypt(original_message)
+encryption = optional_arg_input
 
-encrypted = File.open("text/#{files[1]}", "w").write(encryption[:encryption])
+File.open("text/#{@files[1]}", "w").write(encryption[:encryption])
 
-puts "Created #{files[1]} with the key #{encryption[:key]} and date #{encryption[:date]}"
+puts "Created #{@files[1]} with the key #{encryption[:key]} and date #{encryption[:date]}"

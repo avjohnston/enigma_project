@@ -12,14 +12,14 @@ class Rotation
   def shift_value(rotation, type, key = @key, date = @date)
     if type == :encryption
       (date.rotation(rotation) + key.rotation(rotation))
-    else
+    elsif type == :decryption
     ((date.rotation(rotation) + key.rotation(rotation)) * -1)
     end
   end
 
   def letter_shift(letter, rotation, type, key = @key, date = @date)
-    if @chars.include?(letter)
-      old_letter = @chars.rotate(@chars.index(letter))
+    if @chars.include?(letter.downcase)
+      old_letter = @chars.rotate(@chars.index(letter.downcase))
       new_letter = old_letter.rotate(shift_value(rotation, type, key, date)).first
       new_letter
     else
