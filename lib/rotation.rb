@@ -18,8 +18,8 @@ class Rotation
   end
 
   def letter_shift(letter, rotation, type, key = @key, date = @date)
-    if @chars.include?(letter)
-      old_letter = @chars.rotate(@chars.index(letter))
+    if @chars.include?(letter.downcase)
+      old_letter = @chars.rotate(@chars.index(letter.downcase))
       new_letter = old_letter.rotate(shift_value(rotation, type, key, date)).first
       new_letter
     else
