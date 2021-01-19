@@ -2,7 +2,7 @@
 
 ## Self Evaluation
 
-###Functionality
+### Functionality
 * I believe I meet a 3 for functionality, based on the fact that I have successfully implemented the encrypt class, decrypt class, and the CLI successfully allows you to encrypt and decrypt a message based on the specs we were given in the project requirements. I even added a bit of functionality, where in the message/encrypt/decrypt test files you can add in (on new lines) a key and date that you would like to use, instead of having ones randomly generated for you, or if you just input a message it will randomly generate one and encrypt/decrypt your message.
 
 ### Object Oriented Programing
